@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: cert-registry
+  namespace: registry
+spec:
+  secretName: cert-registry
+  organization:
+  - fredcorporation
+  keySize: 4096
+  keyAlgorithm: rsa
+  commonName: 'registry.k8s.fredcorp.com'
+  dnsNames:
+  - registry.k8s.fredcorp.com
+  issuerRef:
+    name: selfsigned-cluster-issuer
+    kind: ClusterIssuer
