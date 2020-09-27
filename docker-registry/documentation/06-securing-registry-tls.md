@@ -89,12 +89,11 @@ It should create a secret containing the certificate :
 ```console
 [root@workstation ~]# kubectl get secret,certificate -n registry
 NAME                          TYPE                                  DATA   AGE
-secret/cert-registry          kubernetes.io/tls                     3      60d
-secret/default-token-2wdkq    kubernetes.io/service-account-token   3      62d
-secret/registry-auth-secret   Opaque                                1      60d
+secret/cert-registry          kubernetes.io/tls                     3      85s
+secret/default-token-2wdkq    kubernetes.io/service-account-token   3      2d
 
 NAME                                        READY   SECRET          AGE
-certificate.cert-manager.io/cert-registry   True    cert-registry   60d
+certificate.cert-manager.io/cert-registry   True    cert-registry   86s
 ```
 
 Now that we have a certificate we need to edit the ingress configuration to add the SSL information.
