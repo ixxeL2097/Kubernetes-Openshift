@@ -5,6 +5,16 @@ This tutorial assume that you have a kubernetes running cluster installed. In th
 
 ### 1. [Install NFS server](documentation/01-nfs-server.md)
 
-### 2. [Update Vault](documentation/02-update-vault-image.md)
+### 2. [Install NFS client provisioner](documentation/02-kube-nfs-client-provisionner.md)
+
+### 3. [Install NGINX ingress controller](documentation/03-ingress-controller.md)
+
+### 4. [Install private docker registry](documentation/04-install-docker-registry.md)
+
+### 5. [Install load balancer with HAproxy](documentation/05-load-balancing.md)
+
+### 6. [Secruing docker registry](documentation/06-securing-registry-tls.md)
+
+### 7. [Protect docker registry with login access](documentation/07-login-registry.md)
 
 

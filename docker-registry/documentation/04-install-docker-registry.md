@@ -97,6 +97,13 @@ spec:
 kubectl apply -f svc-registry.yaml 
 ```
 
+Or do it via command line :
+
+```console
+[root@workstation ~]# kubectl expose deploy docker-registry --port=5000 --target-port=5000 --name=docker-registry --type=ClusterIP -l app=docker-registry
+service/docker-registry exposed
+```
+
 ```console
 [root@workstation ~]# kubectl get svc -n registry
 NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE

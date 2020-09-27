@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: registry-ingress
+  namespace: registry
+  labels:
+    version: "1.0"
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+    - secretName: cert-registry
+      hosts:
+        - registry.k8s.fredcorp.com
+  rules:
+  - host: registry.k8s.fredcorp.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: docker-registry
+          servicePort: 5000
