@@ -7,7 +7,7 @@ This tutorial assume that you have a kubernetes running cluster installed. In th
 
 ### 2. [Install NFS client provisioner](documentation/02-kube-nfs-client-provisionner.md)
 
-### 3. [Install NGINX ingress controller](documentation/03-ingress-controller.md)
+### 3. [Install NGINX ingress controller](documentation/03-ingress-controller.md)
 
 ### 4. [Install private docker registry](documentation/04-install-docker-registry.md)
 
