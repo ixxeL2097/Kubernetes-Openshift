@@ -17,4 +17,6 @@ This tutorial assume that you have a kubernetes running cluster installed. In th
 
 ### 7. [Protect docker registry with login access](documentation/07-login-registry.md)
 
-### 8. [using registry](documentation/08-using-registry.md)
+### 8. [Using registry](documentation/08-using-registry.md)
+
+### 9. [Deploying from registry](documentation/09-deploy-from-registry.md)
