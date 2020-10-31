@@ -50,3 +50,19 @@ And then you can delete :
     "Tags": []
 }
 ```
+
+If you want to synchronize :
+
+```console
+[root@workstation ~]# skopeo sync --tls-verify=false --src docker --dest dir registry.k8s.fredcorp.com/busybox /tmp/
+WARN[0000] '--tls-verify' is deprecated, please set this on the specific subcommand 
+INFO[0000] Tag presence check                            imagename=registry.k8s.fredcorp.com/busybox tagged=false
+INFO[0000] Getting tags                                  image=registry.k8s.fredcorp.com/busybox
+INFO[0000] Copying image tag 1/1                         from="docker://registry.k8s.fredcorp.com/busybox:1.28.3" to="dir:/tmp/busybox:1.28.3"
+Getting image source signatures
+Copying blob f70adabe43c0 done  
+Copying config 8ac4858969 done  
+Writing manifest to image destination
+Storing signatures
+INFO[0000] Synced 1 images from 1 sources
+```
