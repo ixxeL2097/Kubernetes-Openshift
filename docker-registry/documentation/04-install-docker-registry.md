@@ -159,6 +159,7 @@ So you can see that Ingress Nginx is listening on ports :
 
 - 31953 for http requests
 - 32755 for https requests
+```
 
 ```shell
 curl http://registry.k8s.fredcorp.com:31953/v2/_catalog
