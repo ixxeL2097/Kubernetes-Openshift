@@ -23,7 +23,21 @@ Don't forget to create a registry secret and apply it to your SA responsible for
 secret/registry-fredcorp-auth created
 ```
 
+if you need to copy this secret to another namespace :
+
+```console
+[root@workstation ~]# kubectl get secret <secret-name> --namespace=<ns1> -o yaml | sed 's/namespace: <ns1>/namespace: <ns2>/g' | kubectl create -f -
+```
+
 ```console
 [root@workstation ~]# kubectl patch sa default -n sidecar-injector -p '{"imagePullSecrets": [{"name": "registry-fredcorp-auth"}]}'
 serviceaccount/default patched
+```
+
+Now, when a new Pod is created in the current namespace and using the default ServiceAccount, the new Pod has its spec.imagePullSecrets field set automatically:
+
+```console
+[root@workstation ~]# kubectl get pod sidecar-injector-webhook-deployment-b6f676997-lnv65 -n sidecar-injector -o=jsonpath='{
+.spec.imagePullSecrets[0].name}{"\n"}'
+registry-fredcorp-auth
 ```

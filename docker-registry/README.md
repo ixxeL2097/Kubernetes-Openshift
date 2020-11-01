@@ -13,7 +13,7 @@ This tutorial assume that you have a kubernetes running cluster installed. In th
 
 ### 5. [Install load balancer with HAproxy](documentation/05-load-balancing.md)
 
-### 6. [Secruing docker registry](documentation/06-securing-registry-tls.md)
+### 6. [Securing docker registry](documentation/06-securing-registry-tls.md)
 
 ### 7. [Protect docker registry with login access](documentation/07-login-registry.md)
 
