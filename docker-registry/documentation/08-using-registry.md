@@ -2,7 +2,7 @@
 
 ## 08 - Using the registry
 
-I recommend using skopeo to use registry. You can connect to the registry :
+I recommend using skopeo to use registry (https://github.com/containers/skopeo). You can connect to the registry :
 
 ```console
 [root@workstation ~]# skopeo login --tls-verify=false registry.k8s.fredcorp.com -u fred
@@ -66,3 +66,20 @@ Writing manifest to image destination
 Storing signatures
 INFO[0000] Synced 1 images from 1 sources
 ```
+
+If you need to copy from your docker daemon local registry :
+
+```console
+[root@workstation ~]# skopeo copy docker-daemon:morvencao/sidecar-injector:v20201031-740876e docker://registry.k8s.fredcorp.com/morvencao/sidecar-injector:v20201031-740876e --dest-tls-verify=false
+Getting image source signatures
+Copying blob d195c1adb68c done  
+Copying blob 777f5af13851 done  
+Copying blob 12602ff71fe8 done  
+Copying blob ace0eda3e3be done  
+Copying config 1e21d3f570 done  
+Writing manifest to image destination
+Storing signatures
+```
+
+
+https://cloud.ibm.com/docs/containers?topic=containers-cluster_dns
